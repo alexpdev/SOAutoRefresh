@@ -1,7 +1,8 @@
-let checkstate = true;
+// background.js
 
+let checkstate = true;
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ checkstate });
+  chrome.storage.sync.set({checkstate: checkstate});
   console.log("Checkstate is set");
 })
 
@@ -13,8 +14,7 @@ function handler(details) {
       let transit =  details.transitionQualifiers;
       if (transit.length > 0 && transit[0] == "forward_back"){
         if (details.url.includes("stackoverflow.com")){
-          console.log("This is where I need to refresh the page.");
           chrome.tabs.reload(details.tabId);
     }}} else {
-      console.log("unchecked");
+      console.log(checkstate);
 }})}
