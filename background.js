@@ -1,20 +1,23 @@
 // background.js
-let checkstate = true;
+let sites = ["stackoverflow.com", "askubuntu.com", "stackexchange.com", "serverfault.com", "superuser.com"]
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ checkstate: checkstate });
+  chrome.storage.local.set({sites : sites });
 });
 chrome.webNavigation.onCommitted.addListener(handler);
 chrome.runtime.onMessage.addListener((message, port) => {
-  chrome.storage.sync.set({ checkstate: message.checkstate });
-  checkstate = message.checkstate;
+  chrome.storage.local.set({ sites: message.sites });
+  sites = message.sites;
 });
 function handler(details) {
-  chrome.storage.sync.get("checkstate", (state) => {
-    if (state.checkstate === true) {
+  chrome.storage.sync.get("sites", (state) => {
+    if (state.sites) {
       let transit = details.transitionQualifiers;
       if (transit.length > 0 && transit[0] == "forward_back") {
-        if (details.url.includes("stackoverflow.com")) {
-          chrome.tabs.reload(details.tabId);
+        for (let site of state.sites){
+          if (details.url.includes(site)) {
+            chrome.tabs.reload(details.tabId);
+            break;
+          }
         }
       }
     }

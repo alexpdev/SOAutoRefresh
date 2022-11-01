@@ -1,54 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h3>StackOverflow Refresh</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3>Overflow Refresh</h3>
+      </div>
       <div class="img">
-        <img src="./images/SORefresh48.png" alt="Icon">
+        <img src="./images/SORefresh48.png" alt="Icon" />
+      </div>
+      <div class="description">
+        <p class="description">
+          Select which domains in the StackExchange family of websites that
+          should be auto-refreshed whenever using Google Chrome's Back button.
+        </p>
       </div>
     </div>
-    <div class="description">
-      <p class="description">
-        Select which domains in the StackExchange family of websites that should be auto-refreshed whenever using Google Chrome's Back button.
-      </p>
-    </div>
-  </div>
     <div class="container-list">
       <table>
         <thead>
-          <th style="width:20px;"><input type="checkbox"></th>
-          <th>StackExchange Sites</th>
+          <th style="width: 20px"><input type="checkbox" id="head" /></th>
+          <th>Sites</th>
         </thead>
         <tbody>
           <tr>
-            <td><input type="checkbox" name="stackoverflow.com"></td>
+            <td>
+              <input
+                type="checkbox"
+                class="check"
+                name="stackoverflow.com"
+                checked
+              />
+            </td>
             <td>StackOverflow</td>
           </tr>
           <tr>
-            <td><input type="checkbox" name="stackexchange.com"></td>
+            <td>
+              <input
+                type="checkbox"
+                class="check"
+                name="stackexchange.com"
+                checked
+              />
+            </td>
             <td>StackExchange</td>
           </tr>
           <tr>
-            <td><input type="checkbox" name="askubuntu.com"></td>
+            <td>
+              <input
+                type="checkbox"
+                class="check"
+                name="askubuntu.com"
+                checked
+              />
+            </td>
             <td>AskUbuntu</td>
           </tr>
           <tr>
-            <td><input type="checkbox" name="ServerFault"></td>
+            <td>
+              <input
+                type="checkbox"
+                class="check"
+                name="serverfault.com"
+                checked
+              />
+            </td>
             <td>ServerFault</td>
           </tr>
           <tr>
-            <td><input type="checkbox" name="SuperUser"></td>
+            <td>
+              <input
+                type="checkbox"
+                class="check"
+                name="superuser.com"
+                checked
+              />
+            </td>
             <td>SuperUser</td>
           </tr>
         </tbody>
       </table>
     </div>
-  <script src="jquery.min.js"></script>
-  <script src="popup.js"></script>
-</body>
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
 </html>

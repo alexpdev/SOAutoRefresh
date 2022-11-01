@@ -1,25 +1,27 @@
 {
-  "name": "stackoverflow Instant Refresh",
-  "description": "Refresh Stack Overflow Pages when the back or forward navigation buttons are pressed.",
-  "version": "0.1",
+  "name": "Refresh Overflow",
+  "short_name": "RefreshOverflow",
+  "description": "Refreshes tab whenever the browser's BACK(<-) or FORWARD(->) buttons are pressed while navigating stackoverflow.com and several other domains in the stackexchange family.",
+  "version": "0.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
+  "author": "AlexPDev",
   "permissions": ["storage", "webNavigation"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "/images/SORefresh16.png",
-      "32": "/images/SORefresh32.png",
-      "48": "/images/SORefresh48.png",
-      "128": "/images/SORefresh128.png"
+      "16": "/images/OFR16.png",
+      "32": "/images/OFR32.png",
+      "48": "/images/OFR48.png",
+      "128": "/images/OFR128.png"
     }
   },
   "icons": {
-    "16": "/images/SORefresh16.png",
-    "32": "/images/SORefresh32.png",
-    "48": "/images/SORefresh48.png",
-    "128": "/images/SORefresh128.png"
+    "16": "/images/OFR16.png",
+    "32": "/images/OFR32.png",
+    "48": "/images/OFR48.png",
+    "128": "/images/OFR128.png"
   }
 }
